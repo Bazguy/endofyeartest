@@ -37,7 +37,7 @@ void flag(){
   flagX = x[z]+c;
   rndY = x[z] + 90;
   int flagY = x[z] + 90;
-  flagH = w[z]/2 +sin(s);
+  flagH = w[z]/2 * sin(s);
   h = w[z]/2;
   barChange =(flagH)/6;
   flagW = w[z] * sin(s);
@@ -55,7 +55,7 @@ void flag(){
   triX = x[z]+c;
         while(t < 4){
    fill(colorTri[hue2], 255, 255);
-   triangle(triX, rndY +y/2, triX+h -y, rndY+ h/2, triX, rndY+(h-y/2));
+   triangle(triX, rndY +y/2, triX+h -y, rndY+ h/2, triX, (rndY+(h-y/2)));
    y+= 40;
    hue2++;
    t++;
