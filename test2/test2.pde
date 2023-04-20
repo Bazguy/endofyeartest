@@ -5,6 +5,13 @@ void setup(){
  
   
 }
+int[] x ={30, 80, 140, 170, 250, 200, 300, 360, 490, 420};
+
+
+int z;
+
+
+
 float flagX = 200;
 float flagY = 200;
 float flagW = 500;
@@ -17,12 +24,11 @@ int hue1;
 int hue2;
 int i = 0;
 int t = 0;
-int x;
 int y;
 float rndY;
 float barChange;
-void flag(int x){
-  flagX = x;
+void flag(){
+  flagX = x[z];
   rndY = random(40, 600);
   int flagY = int(rndY);
   flagH = 240;
@@ -41,7 +47,7 @@ void flag(int x){
   }
         while(t < 4){
    fill(colorTri[hue2], 255, 255);
-   triangle(x, rndY +y/2, x+200 -y, rndY+ 120, x, rndY+(240-y/2));
+   triangle(x[z], rndY +y/2, x[z]+200 -y, rndY+ 120, x[z], rndY+(240-y/2));
    y+= 40;
    hue2++;
    t++;
@@ -54,11 +60,10 @@ void flag(int x){
 int flags = 0;
 
 void draw(){ //<>//
-  while(flags < 10){
-   float rnd = random(40, 800);
-   int rnd2 = int(rnd);
-   flag(rnd2);
-   flags++;   
+  while(z < 10){
+  
+   flag();
+   z++;   
    t = 0;
    i = 0;
    hue1 = 0;
