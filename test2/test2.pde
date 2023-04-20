@@ -25,10 +25,9 @@ void flag(int x){
   flagX = x;
   rndY = random(40, 600);
   int flagY = int(rndY);
-  flagY = x;
-  flagH = x*2;
-  barChange = (x*2)/6;
-  flagW = x*3;
+  flagH = 240;
+  barChange =40 ;
+  flagW = 360;
   while(i < 6){
     fill(colorRect[hue1], 255, 255);
     rect(flagX, flagY, flagW, flagH);
@@ -42,8 +41,8 @@ void flag(int x){
   }
         while(t < 4){
    fill(colorTri[hue2], 255, 255);
-   triangle(x, x + y, x*2 -y/2, x*2, x, x + (x*2)-y);
-   y+= (x/4);
+   triangle(x, rndY +y/2, x+200 -y, rndY+ 120, x, rndY+(240-y/2));
+   y+= 40;
    hue2++;
    t++;
    
@@ -56,7 +55,7 @@ int flags = 0;
 
 void draw(){ //<>//
   while(flags < 10){
-   float rnd = random(40, 100);
+   float rnd = random(40, 800);
    int rnd2 = int(rnd);
    flag(rnd2);
    flags++;   
