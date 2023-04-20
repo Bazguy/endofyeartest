@@ -6,6 +6,7 @@ void setup(){
   
 }
 float c;
+float s;
 int[] x ={30, 80, 440, 170, 250, 200, 300, 360, 490, 920};
 int[] w ={400, 300, 100, 550, 230, 480, 970, 600, 180, 340};
 
@@ -36,10 +37,10 @@ void flag(){
   flagX = x[z]+c;
   rndY = x[z] + 90;
   int flagY = x[z] + 90;
-  flagH = w[z]/2;
+  flagH = w[z]/2 +sin(s);
   h = w[z]/2;
-  barChange =(flagH)/6 ;
-  flagW = w[z];
+  barChange =(flagH)/6;
+  flagW = w[z] * sin(s);
   while(i < 6){
     fill(colorRect[hue1], 255, 255);
     rect(flagX, flagY, flagW, flagH);
@@ -60,7 +61,8 @@ void flag(){
    t++;
    
   }
-
+  fill(0, 0, 255);
+ circle(triX+h -y, rndY+ h/2, flagW/6);
  
   
 }
@@ -79,7 +81,8 @@ void draw(){ //<>//
    y = 0;
   }
 
-     c+=2.5;
+     c+=0.5;
+     s+=0.01;
   z =0;
  
 
